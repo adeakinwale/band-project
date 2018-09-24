@@ -37,7 +37,7 @@ class Profile extends Component {
               defaultValue={bio}
             />
           ) : (
-            <p onClick={toggleBio}>Add a bio</p>
+            <p onClick={toggleBio} />
           )}
         </div>
         <div>

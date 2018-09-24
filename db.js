@@ -103,6 +103,16 @@ module.exports.addFriend = function(sender_id, receiver_id) {
 
   return db.query(query, [sender_id || null, receiver_id || null]);
 };
+////EDIT PROFILE///
+exports.editProfile = function(firstname, lastname, email, bio, id) {
+  return db.query(
+    `UPDATE member
+      SET  firstname=$1, lastname=$2, email=$3, bio=$4
+      WHERE id = $5 RETURNING *`,
+    [firstname || null, lastname || null, email || null, bio, id]
+  );
+};
+////END///////////
 
 module.exports.getRequestStatus = function(userid, searchedid) {
   var query = `SELECT id,receiver_id ,sender_id ,status

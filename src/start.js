@@ -6,26 +6,24 @@ import Members from "./member";
 import Footer from "./footer";
 import Registration from "./Registration";
 import Login from "./login";
+import EditProfile from "./EditProfile";
 
-// let elem;
+let elem;
 
 if (location.pathname == "/") {
-  ReactDOM.render(<Welcome />, document.querySelector("main"));
-  // elem = <Welcome />;
-} else if (location.pathname == "/members") {
-  ReactDOM.render(<Members />, document.querySelector("main"));
-} else if (location.pathname == "/footer") {
-  ReactDOM.render(<Footer />, document.querySelector("main"));
-} else if (location.pathname == "/register") {
-  ReactDOM.render(<Registration />, document.querySelector("main"));
-} else if (location.pathname == "/login") {
-  ReactDOM.render(<Login />, document.querySelector("main"));
+  elem = <Welcome />;
 } else if (location.pathname == "/app") {
-  ReactDOM.render(<App />, document.querySelector("main"));
+  elem = <App />;
+} else if (location.pathname == "/members") {
+  elem = <Members />;
+} else if (location.pathname == "/footer") {
+  elem = <Footer />;
+} else if (location.pathname == "/register") {
+  elem = <Registration />;
+} else if (location.pathname == "/login") {
+  elem = <Login />;
+} else if (location.pathname == "/editprofile") {
+  elem = <EditProfile />;
 }
-// else if (location.pathname == "/profile") {
-//   ReactDOM.render(<Profile />, document.querySelector("main"));
-//
-// }
 
-// ReactDOM.render(<elem />, document.querySelector("main"));
+ReactDOM.render(elem, document.querySelector("main"));

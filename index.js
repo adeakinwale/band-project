@@ -129,7 +129,7 @@ app.post("/login", (req, res) => {
             res.json({
               success: true
             });
-            location.replace("/app");
+            // location.replace("/app");
           }
         });
       })
@@ -154,6 +154,7 @@ app.get("/getuserprofile", (req, res) => {
         id: req.session.userId,
         firstname: results.firstname,
         lastname: results.lastname,
+        email: results.email,
         imageUrl: imageurl,
         bio: results.bio
       });
@@ -165,6 +166,30 @@ app.get("/getuserprofile", (req, res) => {
 });
 
 /*****************END GET USER PROFILE ************************/
+
+/****************EDIT PROFILE**********************************/
+
+app.post("/editprofile", (req, res) => {
+  console.log("editProfile req.body: ", req.body);
+  db.editProfile(
+    req.body.firstname,
+    req.body.lastname,
+    req.body.email,
+    req.body.bio,
+    req.session.userId
+  )
+    .then(() => {
+      // req.session.firstname = req.body.firstname;
+      // console.log("", req.session);
+      res.json({
+        success: true
+      });
+    })
+    .catch(error => {
+      console.log("error in editProfile", error);
+    });
+});
+/****************END EDIT PROFILE******************************/
 
 app.get("*", function(req, res) {
   res.sendFile(__dirname + "/index.html");
