@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* WELCOME COMPONENT */
+.welcomePage {
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./IMG_8206.JPG);
+  background-size: cover;
+  height: 1000px;
+  margin-top: -150px;
+}
+.welcomeTextDiv {
+  color: #fff;
+  padding-top: 30%;
+  font-size: 40px;
+  /* letter-spacing: 5px; */
+}
+.welcomeTextDiv h1 {
+  font-size: 40px;
+}
+/* END WELCOME */
+/* REGISTER COMPONENT */
+.register {
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./IMG_8208.JPG);
+  background-size: cover;
+  height: 800px;
+  /* margin-top: -150px; */
+}
+.registerInputDiv {
+  margin: 0 auto;
+  padding-top: 20%;
+}
+.registerInputDiv input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+/* END REGISTER */
+/************************************/
+/* LOGIN COMPONENT */
+.login {
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./IMG_8208.JPG);
+  background-size: cover;
+  height: 800px;
+  /* margin-top: -150px; */
+}
+.loginInputDiv {
+  margin: 0 auto;
+  padding-top: 20%;
+}
+.loginInputDiv input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+/* END LOGIN */
