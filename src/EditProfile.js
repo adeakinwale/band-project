@@ -8,6 +8,7 @@ export default class EditProfile extends React.Component {
     this.state = {};
     this.submit = this.submit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.updateImage = this.updateImage.bind(this);
   }
   componentDidMount() {
     axios.get("/getuserprofile").then(resp => {
@@ -28,7 +29,21 @@ export default class EditProfile extends React.Component {
       [e.target.name]: e.target.value
     });
   }
+  ////IMAGE UPLOADER/////
+  updateImage(e) {
+    this.file = e.target.files[0];
+    let file = this.file;
+    const fd = new FormData();
+    console.log("FILE: ", file);
+    fd.append("file", file);
 
+    axios.post("/uploadimage", fd).then(({ data }) => {
+      console.log("data post upload: ", data);
+      console.log("dataurl: ", data.url);
+      this.props.updateImage(data.url);
+    });
+  }
+  ////END UPLOADER /////
   submit() {
     axios
       .post("/editprofile", {
@@ -91,6 +106,7 @@ export default class EditProfile extends React.Component {
             placeholder="Update bio / info "
           />
 
+          <input type="file" id="ch" onChange={this.updateImage} />
           <Button bsStyle="primary" onClick={this.submit}>
             Edit Profile
           </Button>

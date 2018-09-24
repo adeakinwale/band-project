@@ -6,7 +6,7 @@ const io = require("socket.io")(server, { origins: "localhost:8080" });
 const compression = require("compression");
 const db = require("./db");
 const s3 = require("./s3.js");
-// const config = require("./config");
+const config = require("./config");
 const csurf = require("csurf");
 const cookieSession = require("cookie-session");
 app.use(require("cookie-parser")());
@@ -145,7 +145,7 @@ app.get("/getuserprofile", (req, res) => {
 
     .then(results => {
       // console.log("get user prof results:", results);
-      let imageurl = "/profpic.jpg";
+      let imageurl = "/IMG_8213.JPG";
       if (results.url != null) {
         // imageurl = results.url;
         imageurl = results.url;
@@ -190,6 +190,21 @@ app.post("/editprofile", (req, res) => {
     });
 });
 /****************END EDIT PROFILE******************************/
+
+/******************UPLOAD IMAGE********************************/
+app.post("/uploadimage", uploader.single("file"), s3.upload, (req, res) => {
+  // console.log("req body", req.body);
+  db.insertUrl(config.s3Url + req.file.filename, req.session.userId)
+    .then(({ rows }) => {
+      res.json(rows[0]);
+    })
+
+    .catch(function(err) {
+      console.log("Error while getting user details", err);
+      res.json({ success: false });
+    });
+});
+/******************END IMAGE UPLOAD****************************/
 
 app.get("*", function(req, res) {
   res.sendFile(__dirname + "/index.html");

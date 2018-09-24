@@ -34,6 +34,7 @@ export default class App extends React.Component {
       <div className="app">
         <div>
           <Profile
+            imageUrl={this.state.imageUrl}
             firstname={this.state.firstname}
             lastname={this.state.lastname}
             bio={this.state.bio}

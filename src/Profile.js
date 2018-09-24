@@ -12,33 +12,18 @@ class Profile extends Component {
   }
   render() {
     console.log("profile props:", this.props.state);
-    const {
-      setBio,
-      toggleBio,
-      showBio,
-      bio,
-      firstname,
-      lastname,
-      imageUrl
-    } = this.props;
+    const { bio, firstname, lastname, imageUrl } = this.props;
 
     return (
       <div className="profile">
         <div>
+          <h4>ABOUT ME</h4>
+          <h1>INFO / BIO</h1>
+          <br />
           <h1 className="bionames">
             {firstname} {lastname}
           </h1>
           <h3 className="bio">{bio}</h3>
-
-          {showBio ? (
-            <textarea
-              className="biotextarea"
-              onKeyDown={setBio}
-              defaultValue={bio}
-            />
-          ) : (
-            <p onClick={toggleBio} />
-          )}
         </div>
         <div>
           <img className="profileimage" src={imageUrl} />
