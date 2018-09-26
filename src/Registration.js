@@ -25,7 +25,7 @@ export default class Registration extends React.Component {
         console.log("Registration submit data:", data);
         if (data.success) {
           this.setState({ logged: true });
-          location.replace("/");
+          location.replace("/app");
         } else {
           this.setState({
             error: true

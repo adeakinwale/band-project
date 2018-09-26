@@ -7,6 +7,7 @@ import Footer from "./footer";
 import Registration from "./Registration";
 import Login from "./login";
 import EditProfile from "./EditProfile";
+import UploadContent from "./UploadContent";
 
 let elem;
 
@@ -24,6 +25,8 @@ if (location.pathname == "/") {
   elem = <Login />;
 } else if (location.pathname == "/editprofile") {
   elem = <EditProfile />;
+} else if (location.pathname == "/uploadcontent") {
+  elem = <UploadContent />;
 }
 
 ReactDOM.render(elem, document.querySelector("main"));

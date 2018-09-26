@@ -71,8 +71,6 @@ export default class Home extends React.Component {
   }
 }
 
-
-
 /**************************************************************************/
 // import React from "react";
 // import Footer from "./footer";
@@ -95,3 +93,37 @@ export default class Home extends React.Component {
 // }
 
 /****************************************************************************
+
+/*****************************upload content*********************************/
+// componentDidMount() {
+//   axios.get("/getusercontent").then(resp => {
+//     const { id, firstname, lastname, email, bio, imageUrl } = resp.data;
+//     console.log(id, firstname, lastname, email, bio, imageUrl);
+//     this.setState({
+//       id,
+//       firstname,
+//       lastname,
+//       email,
+//       bio,
+//       imageUrl: imageUrl || this.state.imageUrl
+//     });
+//   });
+// }
+/***********************************************************************/
+// exports.inserContent = function(user_id, track, filename, image, media_type) {
+//   return db.query(
+//     `UPDATE Content
+//       SET track = $1, user_id = $2, filename = $3, image = $4, media_type = $5
+//       WHERE id = $2 RETURNING *`,
+//     [user_id, track, filename, image, media_type]
+//   );
+// };
+
+// -- CREATE TABLE content (
+// --     id SERIAL PRIMARY KEY,
+// --     user_id INTEGER NOT NULL REFERENCES member(id),
+// --     track VARCHAR(300),
+// --     filename VARCHAR(255) NOT NULL,
+// --     image VARCHAR(300),
+// --     media_type VARCHAR(255) NOT NULL
+// -- );

@@ -79,6 +79,14 @@ exports.insertUrl = function(url, id) {
     [url, id]
   );
 };
+exports.inserContent = function(track, user_id) {
+  return db.query(
+    `INSERT INTO content (track, user_id)
+      VALUES ($1, $2)
+       RETURNING *`,
+    [track, user_id]
+  );
+};
 
 exports.changeBio = function(bio, id) {
   return db.query(
@@ -113,6 +121,22 @@ exports.editProfile = function(firstname, lastname, email, bio, id) {
   );
 };
 ////END///////////
+////EDIT CONTENT///
+exports.editContent = function(filename, image, media_type, user_id) {
+  return db.query(
+    `UPDATE content
+      SET  filename=$1, image=$2, media_type=$3
+      WHERE id = $4 RETURNING *`,
+    [filename || null, image || null, media_type || null]
+  );
+};
+////END///////////
+//GET CONTENT //////
+module.exports.getContent = function(user_id) {
+  const query = `SELECT * FROM content WHERE user_id = $1 `;
+  return db.query(query, [user_id]);
+};
+////END///////
 
 module.exports.getRequestStatus = function(userid, searchedid) {
   var query = `SELECT id,receiver_id ,sender_id ,status

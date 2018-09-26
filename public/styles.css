@@ -62,4 +62,15 @@
 /* END LOGIN */
 
 /* PROFILE IMAGE*/
+.profileimage img {
+  height: 30%;
+  width: 30%;
+  float: right;
+}
 /* END PROFILE IMAGE*/
+
+/*APP / PROFILE*/
+body {
+  background-color: #191414;
+  color: white;
+}

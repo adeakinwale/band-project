@@ -25,8 +25,8 @@ class Profile extends Component {
           </h1>
           <h3 className="bio">{bio}</h3>
         </div>
-        <div>
-          <img className="profileimage" src={imageUrl} />
+        <div className="profileimage">
+          <img src={imageUrl} />
         </div>
       </div>
     );

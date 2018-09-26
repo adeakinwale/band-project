@@ -17,7 +17,7 @@ export default class Welcome extends React.Component {
     return (
       <div className="welcomePage">
         <div className="welcomeTextDiv">
-          <h1>Welcome To The Music Place</h1>
+          <h1>Let The Music Speak</h1>
           <p>
             <Button bsStyle="primary">Register</Button>
           </p>

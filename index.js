@@ -169,13 +169,39 @@ app.get("/getuserprofile", (req, res) => {
 
 /****************EDIT PROFILE**********************************/
 
-app.post("/editprofile", (req, res) => {
-  console.log("editProfile req.body: ", req.body);
+app.get("/getcontent", (req, res) => {
+  db.getContent(req.session.userId)
+    .then(results => {
+      console.log("getcontent results: ", results.rows[0]);
+      let imageurl = "/IMG_8213.JPG";
+      if (results.url != null) {
+        // imageurl = results.url;
+        imageurl = results.image;
+      }
+      // req.session.firstname = req.body.firstname;
+      // console.log("", req.session);
+      res.json({
+        user_id: results.rows[0].user_id,
+        track: results.rows[0].track,
+        filename: results.rows[0].filename,
+        image: results.rows[0].image,
+        media_type: results.rows[0].media_type
+      });
+    })
+    .catch(error => {
+      console.log("error in get content", error);
+    });
+});
+/****************END EDIT PROFILE******************************/
+
+/****************EDIT CONTENT**********************************/
+
+app.post("/editcontent", (req, res) => {
+  console.log("editContent req.body: ", req.body);
   db.editProfile(
-    req.body.firstname,
-    req.body.lastname,
-    req.body.email,
-    req.body.bio,
+    req.body.filename,
+    req.body.image,
+    req.body.media_type,
     req.session.userId
   )
     .then(() => {
@@ -189,7 +215,35 @@ app.post("/editprofile", (req, res) => {
       console.log("error in editProfile", error);
     });
 });
-/****************END EDIT PROFILE******************************/
+/****************END EDIT CONTENT******************************/
+
+/*****************GET USER CONTENT ************************/
+app.get("/getusercontent", (req, res) => {
+  db.getUserContent(req.session.userId)
+
+    .then(results => {
+      // console.log("get user prof results:", results);
+      let imageurl = "/IMG_8213.JPG";
+      if (results.url != null) {
+        // imageurl = results.url;
+        imageurl = results.url;
+      }
+      res.json({
+        id: req.session.userId,
+        firstname: results.firstname,
+        lastname: results.lastname,
+        email: results.email,
+        imageUrl: imageurl,
+        bio: results.bio
+      });
+    })
+
+    .catch(function(err) {
+      console.log("User profile error", err);
+    });
+});
+
+/*****************END GET USER CONTENT ************************/
 
 /******************UPLOAD IMAGE********************************/
 app.post("/uploadimage", uploader.single("file"), s3.upload, (req, res) => {
@@ -205,6 +259,21 @@ app.post("/uploadimage", uploader.single("file"), s3.upload, (req, res) => {
     });
 });
 /******************END IMAGE UPLOAD****************************/
+/******************UPLOAD CONTENT********************************/
+app.post("/uploadcontent", uploader.single("file"), s3.upload, (req, res) => {
+  console.log("Upload content req body", req.body);
+  db.inserContent(config.s3Url + req.file.filename, req.session.userId)
+    .then(({ rows }) => {
+      console.log("insert content rows:", rows);
+      res.json(rows[0]);
+    })
+
+    .catch(function(err) {
+      console.log("Error while getting user details", err);
+      res.json({ success: false });
+    });
+});
+/******************END CONTENT UPLOAD****************************/
 
 app.get("*", function(req, res) {
   res.sendFile(__dirname + "/index.html");
