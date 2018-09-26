@@ -192,6 +192,30 @@ app.get("/getcontent", (req, res) => {
       console.log("error in get content", error);
     });
 });
+/****************END GET CONTENT******************************/
+
+/****************EDIT PROFILE**********************************/
+
+app.post("/editprofile", (req, res) => {
+  console.log("editProfile req.body: ", req.body);
+  db.editProfile(
+    req.body.firstname,
+    req.body.lastname,
+    req.body.email,
+    req.body.bio,
+    req.session.userId
+  )
+    .then(() => {
+      // req.session.firstname = req.body.firstname;
+      // console.log("", req.session);
+      res.json({
+        success: true
+      });
+    })
+    .catch(error => {
+      console.log("error in editProfile", error);
+    });
+});
 /****************END EDIT PROFILE******************************/
 
 /****************EDIT CONTENT**********************************/

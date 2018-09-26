@@ -53,7 +53,7 @@ module.exports.loginUser = email => {
 };
 
 //GET PROFILE
-module.exports.getUserProfile = id => {
+module.exports.getUserProfile = function(id) {
   return db
     .query(
       `SELECT *

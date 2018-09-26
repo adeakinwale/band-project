@@ -77,6 +77,9 @@
 /*APP / PROFILE*/
 body {
   background-color: #191414;
+  /* color: white; */
+}
+.overAllDiv {
   color: white;
 }
 
