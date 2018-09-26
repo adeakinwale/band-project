@@ -10,7 +10,7 @@ import EditProfile from "./EditProfile";
 import UploadContent from "./UploadContent";
 
 let elem;
-
+//
 if (location.pathname == "/") {
   elem = <Welcome />;
 } else if (location.pathname == "/app") {
@@ -33,7 +33,7 @@ if (location.pathname == "/") {
 // if (location.pathname === "/welcome/") {
 //   elem = <Welcome />;
 // } else {
-//   elem = <App />;
+//elem = <App />;
 // }
 
 ReactDOM.render(elem, document.querySelector("main"));

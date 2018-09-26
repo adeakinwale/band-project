@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "./axios";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-// import Profile from "./Profile";
 import Videos from "./Videos";
 import Music from "./Music";
 import Photos from "./Photos";
 import Events from "./Events";
 import Bio from "./Bio";
+
 import Albums from "./Albums";
 
 import { connect } from "react-redux";
