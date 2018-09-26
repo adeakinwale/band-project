@@ -63,9 +63,14 @@
 
 /* PROFILE IMAGE*/
 .profileimage img {
+  display: inline-block;
   height: 30%;
   width: 30%;
   float: right;
+}
+.profilLinkDiv {
+  display: inline-block;
+  float: left;
 }
 /* END PROFILE IMAGE*/
 
@@ -74,3 +79,18 @@ body {
   background-color: #191414;
   color: white;
 }
+
+/*PROFILE SECTION*/
+.profileImageLinkDiv {
+  display: inline-block;
+  float: left;
+  width: 40%;
+  border: 1px solid white;
+}
+.profileResourceDiv h1 {
+  display: inline-block;
+  text-align: center;
+  width: 60%;
+  /* border: 1px solid white; */
+}
+/*END*/

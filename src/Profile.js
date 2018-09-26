@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import { Link } from "react-router-dom";
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import axios from "./axios";
@@ -16,13 +17,18 @@ class Profile extends Component {
 
     return (
       <div className="profile">
-        <div>
-          <h4>ABOUT ME</h4>
-          <h1>INFO / BIO</h1>
-          <br />
-          <h1 className="bionames">
+        <div className="profilLinkDiv">
+          <h1 className="">
             {firstname} {lastname}
           </h1>
+          <br />
+          <h4>ABOUT ME</h4>
+
+          <h4>PHOTOS</h4>
+          <h4>ALBUMS / TRACKS</h4>
+          <h4>VIDEOS</h4>
+          <h4>EVENTS</h4>
+
           <h3 className="bio">{bio}</h3>
         </div>
         <div className="profileimage">

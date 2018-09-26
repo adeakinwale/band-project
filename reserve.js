@@ -127,3 +127,104 @@ export default class Home extends React.Component {
 // --     image VARCHAR(300),
 // --     media_type VARCHAR(255) NOT NULL
 // -- );
+import React from "react";
+import axios from "./axios";
+import { Button } from "react-bootstrap";
+
+export default class UploadContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.submit = this.submit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.updateImage = this.updateImage.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+  ////IMAGE UPLOADER/////
+  updateImage(e) {
+    this.file = e.target.files[0];
+    let file = this.file;
+    const fd = new FormData();
+    console.log("FILE: ", file);
+    fd.append("file", file);
+
+    axios.post("/uploadcontent", fd).then(({ data }) => {
+      console.log("data post upload: ", data);
+      console.log("dataurl: ", data.url);
+      this.props.updateImage(data.url);
+    });
+  }
+  ////END UPLOADER /////
+  submit() {
+    axios
+      .post("/updatecontent", {
+        id: this.state.id,
+        track: this.state.track,
+        filename: this.state.filename,
+        image: this.state.image,
+        media_type: this.state.media_type
+      })
+      .then(({ data }) => {
+        console.log("Update content submit data:", data);
+        if (data.success) {
+          // this.setState({ logged: true });
+          location.replace("/app");
+        } else {
+          this.setState({
+            error: true
+          });
+        }
+      });
+  }
+  render() {
+    return (
+      <div className="uploadContent">
+        <div className="uploadContentDiv">
+          <label>Upload Track</label>
+          <input
+
+            onChange={this.handleChange}
+            type="file"
+            name="track"
+            className="track"
+            placeholder="Upload Track"
+          />
+          <input
+
+
+            name="filename"
+            className="filename"
+            placeholder="FIle Name"
+          />
+          <br />
+          <label>Upload Image</label>
+          <input
+
+            onChange={this.handleChange}
+            type="file"
+            name="image"
+            className="image"
+            placeholder="Image"
+          />
+          <br />
+          <input
+
+            onChange={this.handleChange}
+            name="media_type"
+            className="mediaType"
+            placeholder="Media Type"
+          />
+          <br />
+          <input type="file" id="ch" onChange={this.updateImage} />
+
+          <Button bsStyle="primary">Edit Profile</Button>
+        </div>
+      </div>
+    );
+  }
+}
