@@ -39,6 +39,11 @@ export default class Albums extends React.Component {
   }
 
   render() {
-    return <div>ALBUMS COMPONENT</div>;
+    return (
+      <div>
+        <h1>ALBUMS COMPONENT</h1>
+        <audio ref="audio_tag" src={this.state.track} controls autoPlay />
+      </div>
+    );
   }
 }

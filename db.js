@@ -127,7 +127,7 @@ exports.editContent = function(filename, image, media_type, user_id) {
     `UPDATE content
       SET  filename=$1, image=$2, media_type=$3
       WHERE id = $4 RETURNING *`,
-    [filename || null, image || null, media_type || null]
+    [filename || null, image || null, media_type || null, user_id]
   );
 };
 ////END///////////
