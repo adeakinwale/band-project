@@ -40,9 +40,20 @@ export default class Albums extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>ALBUMS COMPONENT</h1>
+      <div className="musicPlayerDiv">
         <audio ref="audio_tag" src={this.state.track} controls autoPlay />
+        <div className="wrapper">
+          <div className="header">
+            <img className="imgHeaderStyle" src="./IMG_8213.JPG" />
+            <p>
+              My Music Website <br /> Where music lives
+            </p>
+            <br className="pClear" />
+          </div>
+          <div className="tracks">
+            <img className="trackCoverImage" src="./custom-album-cover.jpg" />
+          </div>
+        </div>
       </div>
     );
   }

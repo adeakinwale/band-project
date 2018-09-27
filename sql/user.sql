@@ -9,6 +9,8 @@ CREATE TABLE member (
         email VARCHAR(255) NOT NULL,
         password VARCHAR(255) NOT NULL,
         bio VARCHAR(300),
+        instruments VARCHAR(300),
+        category VARCHAR(300),
         url VARCHAR (300)
 );
 
@@ -16,7 +18,8 @@ CREATE TABLE member (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES member(id),
     track VARCHAR(300),
+    genre VARCHAR(300),
     filename VARCHAR(255),
     image VARCHAR(300),
-    media_type VARCHAR(255) 
+    media_type VARCHAR(255)
 );

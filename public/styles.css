@@ -97,3 +97,30 @@ body {
   /* border: 1px solid white; */
 }
 /*END*/
+/* MUSIC PLAYER CSS */
+.musicPlayerDiv {
+  width: 60%;
+  float: right;
+  font-family: verdana, tahoma;
+}
+.imgHeaderStyle {
+  height: 250px;
+  float: left;
+}
+.header {
+  background-color: rgb(255, 70, 39);
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+.pClear {
+  clear: both;
+  text-align: center;
+}
+.tracks {
+  width: 200px;
+  height: 300px;
+  background-color: rgb(1, 142, 167);
+  margin: 20px;
+}
+.trackCoverImage img {
+}

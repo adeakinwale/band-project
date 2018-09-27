@@ -1,6 +1,7 @@
 import React from "react";
-import Footer from "./footer";
+import Registration from "./Registration";
 import { Button, Jumbotron } from "react-bootstrap";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 export default class Welcome extends React.Component {
@@ -16,13 +17,19 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div className="welcomePage">
-        <div className="welcomeTextDiv">
-          <h1>Let The Music Speak</h1>
-          <p>
-            <Button bsStyle="primary">Register</Button>
-          </p>
-        </div>
+        //////
+        <BrowserRouter>
+          <div className="welcomeTextDiv">
+            <div id="options">
+              <h1>Let The Music Speak</h1>
+              <Link to="/register">
+                <Button bsStyle="primary">Register</Button>
+              </Link>
+            </div>
 
+            <Route path="/register" component={Registration} />
+          </div>
+        </BrowserRouter>
         <div className="registrationDiv" />
       </div>
     );
