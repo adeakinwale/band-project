@@ -172,7 +172,7 @@ app.get("/getuserprofile", (req, res) => {
 app.get("/getcontent", (req, res) => {
   db.getContent(req.session.userId)
     .then(results => {
-      console.log("getcontent results: ", results.rows[0]);
+      console.log("getcontent results: ", results.rows);
       let imageurl = "/IMG_8213.JPG";
       if (results.url != null) {
         // imageurl = results.url;
@@ -181,11 +181,7 @@ app.get("/getcontent", (req, res) => {
       // req.session.firstname = req.body.firstname;
       // console.log("", req.session);
       res.json({
-        user_id: results.rows[0].user_id,
-        track: results.rows[0].track,
-        filename: results.rows[0].filename,
-        image: results.rows[0].image,
-        media_type: results.rows[0].media_type
+        content: results.rows
       });
     })
     .catch(error => {
@@ -222,7 +218,8 @@ app.post("/editprofile", (req, res) => {
 
 app.post("/editcontent", (req, res) => {
   console.log("editContent req.body: ", req.body);
-  db.editProfile(
+  console.log("editContent req.session: ", req.session);
+  db.editContent(
     req.body.filename,
     req.body.image,
     req.body.media_type,

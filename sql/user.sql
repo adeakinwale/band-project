@@ -21,5 +21,6 @@ CREATE TABLE member (
     genre VARCHAR(300),
     filename VARCHAR(255),
     image VARCHAR(300),
-    media_type VARCHAR(255)
+    media_type VARCHAR(255),
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

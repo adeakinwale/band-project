@@ -20,6 +20,7 @@ if (location.pathname == "/") {
 } else if (location.pathname == "/footer") {
   elem = <Footer />;
 } else if (location.pathname == "/register") {
+  console.log("yoo");
   elem = <Registration />;
 } else if (location.pathname == "/login") {
   elem = <Login />;

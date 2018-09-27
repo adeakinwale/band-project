@@ -17,9 +17,18 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div className="welcomePage">
-        //////
         <BrowserRouter>
           <div className="welcomeTextDiv">
+            <div>
+              <nav>
+                <Link to="/register">
+                  <h4>Register</h4>
+                </Link>
+                <Link to="/login">
+                  <h4>Login</h4>
+                </Link>
+              </nav>
+            </div>
             <div id="options">
               <h1>Let The Music Speak</h1>
               <Link to="/register">

@@ -79,6 +79,9 @@ body {
   background-color: #191414;
   /* color: white; */
 }
+.options a {
+  text-decoration: none;
+}
 .overAllDiv {
   color: white;
 }
@@ -100,8 +103,10 @@ body {
 /* MUSIC PLAYER CSS */
 .musicPlayerDiv {
   width: 60%;
+  margin: 0 auto;
   float: right;
   font-family: verdana, tahoma;
+  font-size: 13px;
 }
 .imgHeaderStyle {
   height: 250px;
@@ -121,6 +126,22 @@ body {
   height: 300px;
   background-color: rgb(1, 142, 167);
   margin: 20px;
+  color: rgb(255, 255, 255);
+  float: left;
 }
-.trackCoverImage img {
+.tracks img {
+  width: 100%;
+  padding: 4px;
+}
+.uploadDate {
+  color: rgb(0, 0, 0);
+  font-size: 11px;
+  text-align: right;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #677e74;
 }

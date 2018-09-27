@@ -6,9 +6,7 @@ import Music from "./Music";
 import Photos from "./Photos";
 import Events from "./Events";
 import Bio from "./Bio";
-
 import Albums from "./Albums";
-
 import { connect } from "react-redux";
 
 export default class App extends React.Component {
@@ -47,21 +45,21 @@ export default class App extends React.Component {
                     {this.state.firstname} {this.state.lastname}
                   </h1>
                   <br />
-                  <div id="options">
+                  <div className="options">
                     <Link to="/bio">
-                      <h4>BIO / INFO</h4>
+                      <h4>Bio / Info</h4>
                     </Link>
                     <Link to="/photos">
-                      <h4>PHOTOS</h4>
+                      <h4>Photos</h4>
                     </Link>
                     <Link to="/albums">
-                      <h4>ALBUMS / TRACKS</h4>
+                      <h4>Abums / Tracks</h4>
                     </Link>
                     <Link to="/videos">
-                      <h4>VIDEOS</h4>
+                      <h4>Videos</h4>
                     </Link>
                     <Link to="/events">
-                      <h4>EVENTS</h4>
+                      <h4>Events</h4>
                     </Link>
                   </div>
                 </div>
@@ -71,7 +69,6 @@ export default class App extends React.Component {
               </div>
             </div>
             <div className="profileResourceDiv">
-              <p> resource display section </p>
               <Route path="/bio" render={() => <Bio bio={this.state.bio} />} />
               <Route path="/photos" component={Photos} />
               <Route path="/music" component={Music} />

@@ -53,9 +53,10 @@ export default class UploadContent extends React.Component {
   }
   ////END UPLOADER /////
   submit() {
+    console.log("uploader state:", this.state);
     axios
+
       .post("/editcontent", {
-        id: this.state.id,
         user_id: this.state.user_id,
         filename: this.state.filename,
         image: this.state.image,
