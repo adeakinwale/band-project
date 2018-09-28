@@ -137,12 +137,13 @@ exports.editContent = function(filename, image, media_type, user_id) {
 //   return db.query(query);
 // };
 ////END///////
-module.exports.getContent = function() {
+module.exports.getContent = function(user_id) {
   const query = `SELECT content.*, member.firstname,member.lastname
                  FROM content
-                 JOIN member ON member.id = content.user_id 
+                 JOIN member ON member.id = content.user_id
+                  WHERE user_id=$1
                    `;
-  return db.query(query);
+  return db.query(query, [user_id]);
 };
 
 module.exports.getRequestStatus = function(userid, searchedid) {

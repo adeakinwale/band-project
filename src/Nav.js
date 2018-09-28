@@ -4,21 +4,17 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 export default function Navigation(props) {
   return (
-    <div className="navs">
-      <div className="nav">
-        <ul className="navbar">
-          <li>
-            <Link to="/editprofile">Edit Profile</Link>
-          </li>
-          <li>
-            <Link to="/uploadcontent">Upload Content</Link>
-          </li>
+    <div className="nav">
+      <span>
+        <Link to="/editprofile">Edit Profile</Link>
+      </span>
+      <span>
+        <Link to="/uploadcontent">Upload Content</Link>
+      </span>
 
-          <li>
-            <a href="/logout">Logout</a>
-          </li>
-        </ul>
-      </div>
+      <span>
+        <a href="/logout">Logout</a>
+      </span>
     </div>
   );
 }

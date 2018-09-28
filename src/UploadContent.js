@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default class UploadContent extends React.Component {
@@ -78,11 +79,15 @@ export default class UploadContent extends React.Component {
     return (
       <div className="editProfile">
         <div className="editProfileInputDiv">
-          <label>Track</label>
+          <span>
+            <Link to="/app">Back To Profile</Link>
+          </span>
+          <br />
+
           <br />
           <input type="file" name="track" onChange={this.updateImage} />
           <br />
-          <label>Title</label>
+
           <br />
           <input
             onChange={this.handleChange}
@@ -91,10 +96,10 @@ export default class UploadContent extends React.Component {
             placeholder="File Name"
           />
           <br />
-          <label>Cover Image</label>
+
           <input type="file" name="image" onChange={this.updateImage} />
           <br />
-          <label>Media Type</label>
+
           <br />
           <input
             onChange={this.handleChange}
@@ -103,7 +108,12 @@ export default class UploadContent extends React.Component {
             placeholder="Media Type"
           />
           <br />
-          <Button bsStyle="primary" onClick={this.submit}>
+          <br />
+          <Button
+            className="uploadButton"
+            bsStyle="primary"
+            onClick={this.submit}
+          >
             Upload Content
           </Button>
         </div>

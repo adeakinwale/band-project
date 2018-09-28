@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Jumbotron, Button } from "react-bootstrap";
 
 export default class Login extends React.Component {
@@ -50,6 +51,11 @@ export default class Login extends React.Component {
           <Button bsStyle="primary" onClick={this.submit} className="button">
             Login
           </Button>
+          <div className="loginText">
+            <h1>
+              Not a member ? <Link to="/register">Click here to Register!</Link>
+            </h1>
+          </div>
         </div>
       </div>
     );

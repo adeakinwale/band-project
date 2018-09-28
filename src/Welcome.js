@@ -26,7 +26,7 @@ export default class Welcome extends React.Component {
               <div className="welcomePage">
                 <div className="welcomeTextDiv">
                   <nav>
-                    <div id="options">
+                    <div className="options">
                       <h1>Let The Music Speak</h1>
                     </div>
                     <Link to="/register">

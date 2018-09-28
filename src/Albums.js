@@ -44,14 +44,16 @@ export default class Albums extends React.Component {
 
   render() {
     if (!this.state.contents) {
-      return <div>Loading....</div>;
+      return (
+        <div>Click UploadContent button above to upload Tracks / Songs </div>
+      );
     }
     console.log("this.state albums:", this.state.contents);
     return (
       <div className="musicPlayerDiv">
         <div className="wrapper">
           <div className="header">
-            <img className="imgHeaderStyle" src="./IMG_8213.JPG" />
+            <img className="imgHeaderStyle" src="/IMG_8213.JPG" />
             <p />
             <p>
               My Music Website <br /> Track: {this.state.selectedSong.filename}
@@ -69,12 +71,13 @@ export default class Albums extends React.Component {
           {this.state.contents.map(content => (
             <div
               className="tracks"
+              key={content.id}
               onClick={() => this.handleClick(content.id)}
             >
               <div className="trackCard">
                 <img
                   className="trackCoverImage"
-                  src="./custom-album-cover.jpg"
+                  src="/custom-album-cover.jpg"
                 />
                 <br />
                 <br />

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default class EditProfile extends React.Component {
@@ -69,6 +70,11 @@ export default class EditProfile extends React.Component {
     return (
       <div className="editProfile">
         <div className="editProfileInputDiv">
+          <span>
+            <Link to="/app">Back To Profile</Link>
+          </span>
+          <br />
+          <br />
           <input
             defaultValue={this.state.firstname}
             onChange={this.handleChange}
@@ -76,6 +82,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="First Name"
           />
+          <br />
           <br />
           <input
             defaultValue={this.state.lastname}
@@ -85,6 +92,7 @@ export default class EditProfile extends React.Component {
             placeholder="Last Name"
           />
           <br />
+          <br />
           <input
             defaultValue={this.state.email}
             onChange={this.handleChange}
@@ -92,6 +100,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="Email"
           />
+          <br />
           <br />
           <input
             defaultValue={this.state.password}
@@ -102,6 +111,7 @@ export default class EditProfile extends React.Component {
             placeholder="Password"
           />
           <br />
+          <br />
           <textarea
             defaultValue={this.state.bio}
             onChange={this.handleChange}
@@ -110,9 +120,18 @@ export default class EditProfile extends React.Component {
             placeholder="Update bio / info "
           />
           <br />
-          <h3>Change Profile Image</h3>
-          <input type="file" id="ch" onChange={this.updateImage} />
-          <Button bsStyle="primary" onClick={this.submit}>
+          <br />
+
+          <input
+            type="file"
+            className="editTextarea"
+            onChange={this.updateImage}
+          />
+          <Button
+            className="editProfButton"
+            bsStyle="primary"
+            onClick={this.submit}
+          >
             Edit Profile
           </Button>
         </div>

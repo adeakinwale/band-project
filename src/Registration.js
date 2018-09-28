@@ -69,11 +69,10 @@ export default class Registration extends React.Component {
           <Button bsStyle="primary" onClick={this.submit}>
             Register
           </Button>
-          <h1 id="h1Registration" />
 
-          {/*<h1 id="h1Registration">
+          <h1 className="h1Registration">
             Already a member ? <Link to="/login">Click here to Log in!</Link>
-          </h1>*/}
+          </h1>
         </div>
       </div>
     );

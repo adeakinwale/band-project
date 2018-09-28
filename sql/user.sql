@@ -8,7 +8,7 @@ CREATE TABLE member (
         lastname VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         password VARCHAR(255) NOT NULL,
-        bio VARCHAR(300),
+        bio TEXT,
         instruments VARCHAR(300),
         category VARCHAR(300),
         url VARCHAR (300)

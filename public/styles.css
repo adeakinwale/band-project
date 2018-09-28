@@ -11,6 +11,13 @@
   height: 800px;
   /* margin-top: -150px; */
 }
+.photoPlaceHolder {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./placeholder.jpg);
+  width: 40%;
+  margin-left: 40%;
+  height: 50vh;
+}
 .welcomeTextDiv {
   /* color: #fff; */
   padding-top: 30%;
@@ -100,6 +107,7 @@
 .options a {
   text-decoration: none;
   padding-top: 50px;
+  margin-top: 30px;
 }
 
 body {
@@ -113,20 +121,37 @@ body {
   margin-right: 10px;
   border-radius: 5px;
 }
+/* .editProfileInputDiv input,
+textarea,
+h3,
+button {
+  margin-left: 40%;
+} */
+.editProfileInputDiv > * {
+  margin-left: 40%;
+  padding-left: 35px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+.editProfButton {
+  margin-left: 677px;
+}
+.changeProfH {
+  margin-left: 77px;
+}
+
 .editProfile h3,
 input,
 label,
 textarea,
 button {
-  /* margin-left: 40%;
-  margin-top: 20px;
-  width: 300px;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px; */
   border-radius: 5px;
   padding: 10px;
   margin: 0 auto;
+}
+.uploadButton {
+  margin-left: 664px;
 }
 .options {
   padding-top: 20px;
@@ -149,7 +174,40 @@ button {
   display: inline-block;
   text-align: center;
   width: 60%;
+  padding-bottom: 100px;
   /* border: 1px solid white; */
+}
+.options {
+  color: white;
+}
+nav button {
+  padding: 10px;
+  margin-left: 10px;
+}
+.nav span a {
+  text-decoration: none;
+  color: white;
+  margin-left: 80px;
+  padding-bottom: 50px;
+  font-size: 20px;
+}
+.nav {
+  margin-bottom: 60px;
+  margin-top: 20px;
+  width: 100%;
+  margin-left: 60%;
+}
+.h1Registration {
+  color: white;
+}
+.h1Registration a {
+  text-decoration: none;
+}
+.loginText h1 {
+  color: white;
+}
+.loginText a {
+  text-decoration: none;
 }
 /*END*/
 /* MUSIC PLAYER CSS */
@@ -209,6 +267,9 @@ button {
 .bioDiv {
   padding: 20px;
   padding-left: 15px;
+}
+.bioDiv h3 {
+  color: #ffa500;
 }
 .editProfile input text {
   background-color: #fff;

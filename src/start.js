@@ -8,12 +8,13 @@ import Registration from "./Registration";
 import Login from "./login";
 import EditProfile from "./EditProfile";
 import UploadContent from "./UploadContent";
+import Base from "./Base";
 
 let elem;
 if (location.pathname === "/welcome") {
   elem = <Welcome />;
 } else {
-  elem = <App />;
+  elem = <Base />;
 }
 
 ReactDOM.render(elem, document.querySelector("main"));
