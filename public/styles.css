@@ -8,7 +8,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./IMG_8206.JPG);
   background-size: cover;
-  height: 900px;
+  height: 800px;
   /* margin-top: -150px; */
 }
 .welcomeTextDiv {
@@ -27,13 +27,13 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./IMG_8208.JPG);
   background-size: cover;
-  /* height: 100vh; */
+  height: 100vh;
   /* height: 800px; */
   /* margin-top: -150px; */
 }
 .registerInputDiv {
   margin: 0 auto;
-  padding-top: 20%;
+  padding-top: 30%;
 }
 .registerInputDiv input {
   padding: 10px;
@@ -49,9 +49,13 @@
     url(./IMG_8208.JPG);
   background-size: cover;
   height: 100vh;
-  padding-top: 500px;
-  padding-bottom: 500px;
-  margin-top: -500px;
+  /* padding-top: 500px;
+  padding-bottom: 500px; */
+}
+.loginInputDiv input {
+  margin-right: 10px;
+  border-radius: 5px;
+  margin-top: 450px;
 }
 
 /* END LOGIN */

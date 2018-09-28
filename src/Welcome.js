@@ -17,33 +17,34 @@ export default class Welcome extends React.Component {
 
   render() {
     return (
-      <div className="welcomePage">
-        <HashRouter>
-          <div className="welcomeTextDiv">
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <nav>
-                  <div id="options">
-                    <h1>Let The Music Speak</h1>
-                  </div>
-                  <Link to="/register">
-                    <Button bsStyle="primary">Register</Button>
-                  </Link>
-                  <Link to="/login">
-                    <Button bsStyle="primary">Login</Button>
-                  </Link>
-                </nav>
-              )}
-            />
+      <HashRouter>
+        <div>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div className="welcomePage">
+                <div className="welcomeTextDiv">
+                  <nav>
+                    <div id="options">
+                      <h1>Let The Music Speak</h1>
+                    </div>
+                    <Link to="/register">
+                      <Button bsStyle="primary">Register</Button>
+                    </Link>
+                    <Link to="/login">
+                      <Button bsStyle="primary">Login</Button>
+                    </Link>
+                  </nav>
+                </div>
+              </div>
+            )}
+          />
 
-            <Route exact path="/register" component={Registration} />
-            <Route exact path="/login" component={Login} />
-          </div>
-        </HashRouter>
-        <div className="registrationDiv" />
-      </div>
+          <Route exact path="/register" component={Registration} />
+          <Route exact path="/login" component={Login} />
+        </div>
+      </HashRouter>
     );
   }
 }
