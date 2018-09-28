@@ -76,6 +76,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="First Name"
           />
+          <br />
           <input
             defaultValue={this.state.lastname}
             onChange={this.handleChange}
@@ -83,6 +84,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="Last Name"
           />
+          <br />
           <input
             defaultValue={this.state.email}
             onChange={this.handleChange}
@@ -90,6 +92,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="Email"
           />
+          <br />
           <input
             defaultValue={this.state.password}
             onChange={this.handleChange}
@@ -98,6 +101,7 @@ export default class EditProfile extends React.Component {
             className="input"
             placeholder="Password"
           />
+          <br />
           <textarea
             defaultValue={this.state.bio}
             onChange={this.handleChange}
@@ -105,7 +109,8 @@ export default class EditProfile extends React.Component {
             className="bioInput"
             placeholder="Update bio / info "
           />
-
+          <br />
+          <h3>Change Profile Image</h3>
           <input type="file" id="ch" onChange={this.updateImage} />
           <Button bsStyle="primary" onClick={this.submit}>
             Edit Profile

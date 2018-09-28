@@ -8,11 +8,11 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./IMG_8206.JPG);
   background-size: cover;
-  height: 1000px;
-  margin-top: -150px;
+  height: 900px;
+  /* margin-top: -150px; */
 }
 .welcomeTextDiv {
-  color: #fff;
+  /* color: #fff; */
   padding-top: 30%;
   font-size: 40px;
   /* letter-spacing: 5px; */
@@ -27,7 +27,8 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./IMG_8208.JPG);
   background-size: cover;
-  height: 800px;
+  /* height: 100vh; */
+  /* height: 800px; */
   /* margin-top: -150px; */
 }
 .registerInputDiv {
@@ -47,51 +48,98 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./IMG_8208.JPG);
   background-size: cover;
-  height: 800px;
-  /* margin-top: -150px; */
+  height: 100vh;
+  padding-top: 500px;
+  padding-bottom: 500px;
+  margin-top: -500px;
 }
-.loginInputDiv {
-  margin: 0 auto;
-  padding-top: 20%;
-}
-.loginInputDiv input {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
+
 /* END LOGIN */
 
 /* PROFILE IMAGE*/
 .profileimage img {
   display: inline-block;
-  height: 30%;
-  width: 30%;
+  height: 50%;
+  width: 50%;
   float: right;
+  padding-top: 30px;
+  padding-right: 20px;
 }
 .profilLinkDiv {
   display: inline-block;
   float: left;
 }
+.profilLinkDiv h2 {
+  margin-left: 15px;
+  width: 100%;
+  clear: both;
+}
+.navs {
+  text-decoration: none;
+  /* float: leftt; */
+  margin-bottom: 50px;
+}
+.navs a {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  color: #fff;
+}
 /* END PROFILE IMAGE*/
 
 /*APP / PROFILE*/
-body {
+/* main {
   background-color: #191414;
-  /* color: white; */
-}
+
+} */
+
 .options a {
   text-decoration: none;
+  padding-top: 50px;
+}
+
+body {
+  background-color: #191414;
+}
+.editProfileInputDiv {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.editProfile h3,
+input,
+label,
+textarea,
+button {
+  /* margin-left: 40%;
+  margin-top: 20px;
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px; */
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+}
+.options {
+  padding-top: 20px;
+  padding-left: 10px;
 }
 .overAllDiv {
   color: white;
 }
-
+.browserRouterDiv {
+}
 /*PROFILE SECTION*/
 .profileImageLinkDiv {
   display: inline-block;
   float: left;
-  width: 40%;
-  border: 1px solid white;
+  width: 35%;
+  margin-right: 20px;
+  /* border: 1px solid white; */
 }
 .profileResourceDiv h1 {
   display: inline-block;
@@ -102,11 +150,13 @@ body {
 /*END*/
 /* MUSIC PLAYER CSS */
 .musicPlayerDiv {
-  width: 60%;
+  width: 45%;
   margin: 0 auto;
   float: right;
   font-family: verdana, tahoma;
   font-size: 13px;
+  margin-right: 50px;
+  padding: 5px;
 }
 .imgHeaderStyle {
   height: 250px;
@@ -144,4 +194,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #677e74;
+}
+.musicPlayerDiv {
+  background-color: #677e74;
+}
+.appNav {
+  margin-bottom: 80px;
+}
+/*bio styles*/
+.bioDiv {
+  padding: 20px;
+  padding-left: 15px;
+}
+.editProfile input text {
+  background-color: #fff;
+  margin: 0 auto;
 }

@@ -7,6 +7,9 @@ import Photos from "./Photos";
 import Events from "./Events";
 import Bio from "./Bio";
 import Albums from "./Albums";
+
+import Navigation from "./Nav";
+
 import { connect } from "react-redux";
 
 export default class App extends React.Component {
@@ -38,12 +41,16 @@ export default class App extends React.Component {
       <div className="overAllDiv">
         <BrowserRouter>
           <div className="browserRouterDiv">
+            <Navigation />
+            <Link to="/logout">
+              <h4>logout</h4>
+            </Link>
             <div className="profileImageLinkDiv">
               <div className="profile">
                 <div className="profilLinkDiv">
-                  <h1 className="">
+                  <h2 className="">
                     {this.state.firstname} {this.state.lastname}
-                  </h1>
+                  </h2>
                   <br />
                   <div className="options">
                     <Link to="/bio">

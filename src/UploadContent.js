@@ -82,7 +82,7 @@ export default class UploadContent extends React.Component {
           <br />
           <input type="file" name="track" onChange={this.updateImage} />
           <br />
-          <label>File Name</label>
+          <label>Title</label>
           <br />
           <input
             onChange={this.handleChange}
@@ -91,7 +91,7 @@ export default class UploadContent extends React.Component {
             placeholder="File Name"
           />
           <br />
-          <label>Image</label>
+          <label>Cover Image</label>
           <input type="file" name="image" onChange={this.updateImage} />
           <br />
           <label>Media Type</label>

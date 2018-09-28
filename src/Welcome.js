@@ -1,7 +1,8 @@
 import React from "react";
 import Registration from "./Registration";
+import Login from "./login";
 import { Button, Jumbotron } from "react-bootstrap";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 export default class Welcome extends React.Component {
@@ -17,28 +18,30 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div className="welcomePage">
-        <BrowserRouter>
+        <HashRouter>
           <div className="welcomeTextDiv">
-            <div>
-              <nav>
-                <Link to="/register">
-                  <h4>Register</h4>
-                </Link>
-                <Link to="/login">
-                  <h4>Login</h4>
-                </Link>
-              </nav>
-            </div>
-            <div id="options">
-              <h1>Let The Music Speak</h1>
-              <Link to="/register">
-                <Button bsStyle="primary">Register</Button>
-              </Link>
-            </div>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <nav>
+                  <div id="options">
+                    <h1>Let The Music Speak</h1>
+                  </div>
+                  <Link to="/register">
+                    <Button bsStyle="primary">Register</Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button bsStyle="primary">Login</Button>
+                  </Link>
+                </nav>
+              )}
+            />
 
-            <Route path="/register" component={Registration} />
+            <Route exact path="/register" component={Registration} />
+            <Route exact path="/login" component={Login} />
           </div>
-        </BrowserRouter>
+        </HashRouter>
         <div className="registrationDiv" />
       </div>
     );

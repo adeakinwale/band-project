@@ -32,7 +32,7 @@ export default class Login extends React.Component {
     return (
       <div className="login">
         {this.state.error && <div className="error">TRY AGAIN</div>}
-        <h1>Log In page</h1>
+
         <div className="loginInputDiv ">
           <input
             onChange={this.handleChange}

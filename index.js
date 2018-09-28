@@ -189,7 +189,11 @@ app.get("/getcontent", (req, res) => {
     });
 });
 /****************END GET CONTENT******************************/
-
+///////////////////////////////Logout
+app.get("/logout", function(req, res) {
+  req.session = null;
+  res.redirect("/");
+});
 /****************EDIT PROFILE**********************************/
 
 app.post("/editprofile", (req, res) => {
@@ -295,8 +299,17 @@ app.post("/uploadcontent", uploader.single("file"), s3.upload, (req, res) => {
     });
 });
 /******************END CONTENT UPLOAD****************************/
+app.get("/welcome", function(req, res) {
+  if (req.session.userId) {
+    res.redirect("/");
+  }
+  res.sendFile(__dirname + "/index.html");
+});
 
 app.get("*", function(req, res) {
+  if (!req.session.userId) {
+    res.redirect("/welcome");
+  }
   res.sendFile(__dirname + "/index.html");
 });
 

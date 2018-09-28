@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Jumbotron, Button } from "react-bootstrap";
 
 export default class Registration extends React.Component {
@@ -37,6 +38,7 @@ export default class Registration extends React.Component {
     return (
       <div className="register">
         {this.state.error && <div className="error">PLEASE TRY AGAIN</div>}
+
         <div className="registerInputDiv">
           <input
             onChange={this.handleChange}
@@ -68,6 +70,10 @@ export default class Registration extends React.Component {
             Register
           </Button>
           <h1 id="h1Registration" />
+
+          {/*<h1 id="h1Registration">
+            Already a member ? <Link to="/login">Click here to Log in!</Link>
+          </h1>*/}
         </div>
       </div>
     );
